@@ -1,46 +1,45 @@
-import { combineReducers, configureStore } from '@reduxjs/toolkit';
-import { contactsReducer } from 'redux/contactsSlice';
-import { filterReducer } from 'redux/filterSlice';
+import { configureStore } from '@reduxjs/toolkit';
 
-const rootReducer = combineReducers({
-  contacts: contactsReducer,
-  filter: filterReducer,
-});
+import {
+  persistStore,
+  persistReducer,
+  FLUSH,
+  REHYDRATE,
+  PAUSE,
+  PERSIST,
+  PURGE,
+  REGISTER,
+} from 'redux-persist';
+
+import storage from 'redux-persist/lib/storage';
+
+import { contactsReducer } from 'redux/contacts/contactsSlice';
+import { filterReducer } from 'redux/contacts/filterSlice';
+import { authReducer } from 'redux/auth/authSlice';
+
+// Persisting token field from auth slice to localstorage
+const authPersistConfig = {
+  key: 'auth',
+  storage,
+  whitelist: ['token'],
+};
+
+const persistedAuthReducer = persistReducer(authPersistConfig, authReducer);
 
 export const store = configureStore({
-  reducer: rootReducer,
+  reducer: {
+    auth: persistedAuthReducer,
+    contacts: contactsReducer,
+    filter: filterReducer,
+  },
+  middleware(getDefaultMiddleware) {
+    return getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    });
+  },
+  devTools: process.env.NODE_ENV === 'development',
 });
 
-// import storage from 'redux-persist/lib/storage';
-// import {
-//   persistStore,
-//   persistReducer,
-//   FLUSH,
-//   REHYDRATE,
-//   PAUSE,
-//   PERSIST,
-//   PURGE,
-//   REGISTER,
-// } from 'redux-persist';
-
-// const persistConfig = {
-//   key: 'root',
-//   storage,
-//   whitelist: ['contacts'],
-// };
-
-// const persistedReducer = persistReducer(persistConfig, rootReducer);
-
-// export const store = configureStore({
-//   reducer: persistedReducer,
-
-//   middleware(getDefaultMiddleware) {
-//     return getDefaultMiddleware({
-//       serializableCheck: {
-//         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-//       },
-//     });
-//   },
-// });
-
-// export const persistor = persistStore(store);
+export const persistor = persistStore(store);

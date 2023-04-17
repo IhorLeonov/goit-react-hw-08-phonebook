@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { ButtonDelete, Item } from './ContactItem.styled';
-import { toggleModal } from 'redux/contactsSlice';
+import { toggleModal } from 'redux/contacts/contactsSlice';
 import { useDispatch } from 'react-redux';
 
 export const ContactItem = ({ id, name, number }) => {

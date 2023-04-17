@@ -1,18 +1,11 @@
 import { createSlice, isAnyOf } from '@reduxjs/toolkit';
 import { addContact, deleteContact, fetchContacts } from './operations';
-
-// const handlePending = state => {
-//   state.isLoading = true;
-// };
+import { logOut } from 'redux/auth/operations';
 
 // const handleRejected = (state, action) => {
 //   state.isLoading = false;
 //   state.error = action.payload;
 // };
-
-const arr = [0, 20, 50, 60, 100];
-const arrr = Math.max.apply(null, arr);
-console.log(arrr);
 
 const contactsSlice = createSlice({
   name: 'contacts',
@@ -36,10 +29,16 @@ const contactsSlice = createSlice({
         state.error = null;
         state.items = action.payload;
       })
+      .addCase(fetchContacts.pending, state => {
+        state.isLoading = true;
+      })
       .addCase(addContact.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
         state.items.push(action.payload);
+      })
+      .addCase(addContact.pending, state => {
+        state.isLoading = true;
       })
       .addCase(deleteContact.fulfilled, (state, action) => {
         state.isLoading = false;
@@ -49,17 +48,15 @@ const contactsSlice = createSlice({
         );
         state.items.splice(index, 1);
       })
+      .addCase(deleteContact.pending, state => {
+        state.isLoading = true;
+      })
+      .addCase(logOut.fulfilled, state => {
+        state.items = [];
+        state.error = null;
+        state.isLoading = false;
+      })
       // Group the same code in addMatcher
-      .addMatcher(
-        isAnyOf(
-          fetchContacts.pending,
-          addContact.pending,
-          deleteContact.pending
-        ),
-        state => {
-          state.isLoading = true;
-        }
-      )
       .addMatcher(
         isAnyOf(
           fetchContacts.rejected,

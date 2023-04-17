@@ -2,7 +2,7 @@ import { Overlay, ModalBox } from 'components/modal/Modal.styled';
 import { createPortal } from 'react-dom';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { toggleModal } from 'redux/contactsSlice';
+import { toggleModal } from 'redux/contacts/contactsSlice';
 
 const modalRoot = document.querySelector('#modal-root');
 

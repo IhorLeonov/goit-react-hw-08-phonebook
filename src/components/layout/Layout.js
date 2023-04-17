@@ -1,11 +1,17 @@
+import { Outlet } from 'react-router-dom';
+import { Toaster } from 'react-hot-toast';
+import { AppBar } from 'components/appBar/AppBar';
+import { Suspense } from 'react';
 import { Container } from 'components/layout/Layout.styled';
 
-export const Layout = ({ children }) => {
+export const Layout = () => {
   return (
     <Container>
-      <header></header>
-      <main>{children}</main>
-      <footer></footer>
+      <AppBar />
+      <Suspense fallback={null}>
+        <Outlet />
+      </Suspense>
+      <Toaster position="top-left" reverseOrder={false} />
     </Container>
   );
 };

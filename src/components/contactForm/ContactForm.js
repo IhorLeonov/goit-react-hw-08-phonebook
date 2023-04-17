@@ -12,8 +12,8 @@ import {
 
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
-import { selectContacts } from 'redux/selectors';
-import { addContact } from 'redux/operations';
+import { selectContacts } from 'redux/contacts/selectors';
+import { addContact } from 'redux/contacts/operations';
 
 const notifyError = message => toast.error(message);
 
@@ -38,8 +38,8 @@ export const ContactForm = () => {
   const handleAddContact = (name, number) => {
     dispatch(
       addContact({
-        name: name,
-        phone: number,
+        name,
+        number,
       })
     );
   };

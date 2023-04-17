@@ -1,58 +1,53 @@
-import { GlobalStyle } from 'components/constants/GlobalStyle';
 import { Layout } from 'components/layout/Layout';
-import { ContactForm } from 'components/contactForm/ContactForm';
-import { ContactList } from 'components/contactList/ContactList';
-import { Filter } from 'components/filter/Filter';
-import { MainTitle, Phonebook, SecondTitle } from 'components/app/App.styled';
-import { Notification } from 'components/notification/Notification';
-import { Modal } from 'components/modal/Modal';
-import { DeleteContactWarning } from 'components/deleteContactWarning/DeleteContactWarning';
+import { Route, Routes } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { useEffect, lazy } from 'react';
+import { PrivateRoute } from 'components/PrivateRoute';
+import { RestrictedRoute } from 'components/RestrictedRoute';
+import { refreshUser } from 'redux/auth/operations';
+import { useAuth } from 'hooks/useAuth';
 
-import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
-import { fetchContacts } from 'redux/operations';
-
-import {
-  selectError,
-  selectIsLoading,
-  selectContacts,
-  selectDeleteId,
-  selectShowModal,
-} from 'redux/selectors';
+const HomePage = lazy(() => import('pages/home/HomePage'));
+const RegisterPage = lazy(() => import('pages/register/RegisterPage'));
+const LoginPage = lazy(() => import('pages/login/LoginPage'));
+const ContactsPage = lazy(() => import('pages/contacts/ContactsPage'));
 
 export const App = () => {
   const dispatch = useDispatch();
-  const contacts = useSelector(selectContacts);
-  const isLoading = useSelector(selectIsLoading);
-  const error = useSelector(selectError);
-  const showModal = useSelector(selectShowModal);
-  const deleteId = useSelector(selectDeleteId);
+  const { isRefreshing } = useAuth();
 
   useEffect(() => {
-    dispatch(fetchContacts());
+    dispatch(refreshUser());
   }, [dispatch]);
 
-  return (
-    <Layout>
-      <Phonebook>
-        <MainTitle>Phonebook</MainTitle>
-
-        <ContactForm />
-        <Filter />
-        {!isLoading && <SecondTitle>Contacts</SecondTitle>}
-        {isLoading && !error && <SecondTitle>Loading...</SecondTitle>}
-        {contacts?.length < 1 ? (
-          <Notification message={'Phonebook is empty!'} />
-        ) : (
-          <ContactList />
-        )}
-        <GlobalStyle />
-      </Phonebook>
-      {showModal && (
-        <Modal>
-          <DeleteContactWarning id={deleteId} />
-        </Modal>
-      )}
-    </Layout>
+  return isRefreshing ? (
+    <b>Refreshing user data...</b>
+  ) : (
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<HomePage />} />
+        <Route
+          path="/register"
+          element={
+            <RestrictedRoute
+              redirectTo="/contacts"
+              component={<RegisterPage />}
+            />
+          }
+        />
+        <Route
+          path="/login"
+          element={
+            <RestrictedRoute redirectTo="/contacts" component={<LoginPage />} />
+          }
+        />
+        <Route
+          path="/contacts"
+          element={
+            <PrivateRoute redirectTo="/login" component={<ContactsPage />} />
+          }
+        />
+      </Route>
+    </Routes>
   );
 };
