@@ -7,7 +7,9 @@ import {
 
 export const Form = styled(FormikForm)`
   margin-top: 15px;
+  padding-bottom: 15px;
   border-radius: 5px;
+  border-bottom: ${props => `1px solid ${props.theme.colors.bd}`};
 `;
 
 export const FormLabel = styled.label`
@@ -20,7 +22,7 @@ export const FormLabel = styled.label`
 export const Field = styled(FormikField)`
   display: block;
   margin-top: 10px;
-  width: 100%;
+  width: 350px;
 `;
 
 export const ErrorMessage = styled(FormikError)`

@@ -4,7 +4,7 @@ const HomePage = () => {
   return (
     <Container>
       <Title>
-        Task manager welcome page{' '}
+        Welcome Phonebook!{' '}
         <span role="img" aria-label="Greeting icon">
           💁‍♀️
         </span>

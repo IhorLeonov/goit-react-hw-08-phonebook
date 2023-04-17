@@ -15,11 +15,15 @@ const contactsSlice = createSlice({
     error: null,
     showModal: false,
     deleteId: 0,
+    isAddFormOpen: false,
   },
   reducers: {
     toggleModal: (state, action) => {
       state.showModal = !state.showModal;
       state.deleteId = action.payload;
+    },
+    openAddForm: state => {
+      state.isAddFormOpen = !state.isAddFormOpen;
     },
   },
   extraReducers: builder =>
@@ -36,6 +40,7 @@ const contactsSlice = createSlice({
         state.isLoading = false;
         state.error = null;
         state.items.push(action.payload);
+        state.isAddFormOpen = false;
       })
       .addCase(addContact.pending, state => {
         state.isLoading = true;
@@ -71,4 +76,4 @@ const contactsSlice = createSlice({
 });
 
 export const contactsReducer = contactsSlice.reducer;
-export const { toggleModal } = contactsSlice.actions;
+export const { toggleModal, openAddForm } = contactsSlice.actions;

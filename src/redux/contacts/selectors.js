@@ -6,26 +6,22 @@ export const selectError = state => state.contacts.error;
 export const selectFilter = state => state.filter;
 export const selectShowModal = state => state.contacts.showModal;
 export const selectDeleteId = state => state.contacts.deleteId;
+export const selectIsAddFormOpen = state => state.contacts.isAddFormOpen;
 
-// Compound selector
-// export const selectFiltredContacts = state => {
-//   const contacts = selectContacts(state);
-//   const filterValue = selectFilter(state);
+const collator = new Intl.Collator('en');
 
-//   return contacts.filter(({ name }) =>
-//     name.toLowerCase().includes(filterValue.toLowerCase())
-//   );
-// };
+function SortArray(x, y) {
+  return collator.compare(x.name, y.name);
+}
 
 // Memoize selector
 export const selectFiltredContacts = createSelector(
-  // Массив входных селекторов
   [selectContacts, selectFilter],
-  // Функция преобразователь
   (contacts, filterValue) => {
-    // Выполняем вычисления и возвращаем результат
-    return contacts.filter(({ name }) =>
+    const filtredContacts = contacts.filter(({ name }) =>
       name.toLowerCase().includes(filterValue.toLowerCase())
     );
+
+    return filtredContacts.sort(SortArray);
   }
 );
