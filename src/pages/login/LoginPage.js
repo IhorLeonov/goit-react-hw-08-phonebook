@@ -1,16 +1,19 @@
 import { LoginForm } from 'components/loginForm/LoginForm';
+import { LoginBox, LoginTitle } from './LoginPage.styled';
 // import { Helmet } from 'react-helmet-async';
 // import { HelmetProvider } from 'react-helmet-async';
 // const helmetContext = {};
 
 const LoginPage = () => {
   return (
-    <div>
+    <>
       {/* <Helmet> */}
-      <title>Login</title>
+      <LoginTitle>Login</LoginTitle>
       {/* </Helmet> */}
-      <LoginForm />
-    </div>
+      <LoginBox>
+        <LoginForm />
+      </LoginBox>
+    </>
   );
 };
 

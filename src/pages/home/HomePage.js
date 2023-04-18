@@ -1,10 +1,10 @@
-import { Title, Container } from './HomePage.styled';
+import { Title, Container } from 'pages/home/HomePage.styled';
 
 const HomePage = () => {
   return (
     <Container>
       <Title>
-        Welcome Phonebook!{' '}
+        Welcomepage Phonebook!{' '}
         <span role="img" aria-label="Greeting icon">
           💁‍♀️
         </span>

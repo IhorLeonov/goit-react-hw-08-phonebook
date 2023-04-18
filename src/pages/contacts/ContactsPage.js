@@ -22,7 +22,12 @@ import {
   Phonebook,
   SecondTitle,
   UpperBox,
+  Headers,
+  Name,
+  Number,
+  Total,
 } from 'pages/contacts/ContactsPage.styled';
+
 import { Notification } from 'components/notification/Notification';
 import { Modal } from 'components/modal/Modal';
 import { DeleteContactWarning } from 'components/deleteContactWarning/DeleteContactWarning';
@@ -58,9 +63,14 @@ const ContactsPage = () => {
           <ButtonAdd type="button" onClick={handleOpenAddForm}>
             +
           </ButtonAdd>
-          <Filter />
         </UpperBox>
         {isAddFormOpen && <ContactForm />}
+        <Headers>
+          <Total>Total: {contacts?.length}</Total>
+          <Name>Name:</Name>
+          <Number>Number:</Number>
+          <Filter />
+        </Headers>
         <div>
           {contacts?.length < 1 ? (
             <Notification message={'Phonebook is empty!'} />

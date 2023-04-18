@@ -3,7 +3,8 @@ import {
   ButtonDelete,
   Item,
   FirstLetterBox,
-  TextWraper,
+  Name,
+  Number,
 } from './ContactItem.styled';
 import { toggleModal } from 'redux/contacts/contactsSlice';
 import { useDispatch } from 'react-redux';
@@ -17,9 +18,8 @@ export const ContactItem = ({ id, name, number, randomColor }) => {
       <FirstLetterBox style={{ background: `${randomColor}` }}>
         {name[0]}
       </FirstLetterBox>
-      <TextWraper>
-        {name}: {number}
-      </TextWraper>
+      <Name>{name}</Name>
+      <Number>{number}</Number>
       <ButtonDelete type="button" onClick={handleToggleModal}>
         Delete
       </ButtonDelete>

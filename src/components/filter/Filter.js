@@ -10,7 +10,7 @@ export const Filter = () => {
 
   return (
     <Label>
-      Find contact:
+      Search:
       <Input
         type="text"
         value={filterValue}

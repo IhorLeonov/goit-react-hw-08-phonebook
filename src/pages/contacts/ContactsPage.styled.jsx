@@ -5,13 +5,8 @@ export const Phonebook = styled.div`
   margin-left: auto;
   margin-right: auto;
   padding: 30px;
-  /* width: 400px; */
-
-  /* border-radius: 5px; */
   border: ${props => `1px solid ${props.theme.colors.bd}`};
-  /* box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    1px 4px 6px rgba(0, 0, 0, 0.16); */
-  /* background-color: ${props => `${props.theme.colors.bg}`}; */
+  border-top: 0px;
 `;
 
 export const MainTitle = styled.h1`
@@ -39,4 +34,30 @@ export const ButtonAdd = styled(ButtonSubmit)`
   background: rgb(128, 244, 126);
   color: rgb(68, 68, 68);
   font-size: 18px;
+`;
+
+export const Headers = styled.div`
+  display: flex;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  align-items: center;
+  /* margin-left: 10px; */
+  /* border: 1px solid black; */
+  border-bottom: ${props => `1px solid ${props.theme.colors.bd}`};
+`;
+
+export const Total = styled.div`
+  width: 70px;
+`;
+
+export const Name = styled.div`
+  width: 200px;
+  /* border: 1px solid red; */
+  margin-left: 10px;
+`;
+
+export const Number = styled.div`
+  width: 200px;
+  /* border: 1px solid blue; */
+  /* margin-left: 10px; */
 `;

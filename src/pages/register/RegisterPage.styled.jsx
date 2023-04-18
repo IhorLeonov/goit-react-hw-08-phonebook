@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
-export const LoginBox = styled.div`
+export const RegisterBox = styled.div`
   display: flex;
   margin-top: 15px;
   justify-content: center;
 `;
 
-export const LoginTitle = styled.title`
+export const Title = styled.title`
   margin-top: 15px;
   display: flex;
   justify-content: center;
