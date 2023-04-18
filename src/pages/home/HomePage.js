@@ -1,14 +1,14 @@
-import { Title, Container } from 'pages/home/HomePage.styled';
+import { Container } from 'pages/home/HomePage.styled';
 
 const HomePage = () => {
   return (
     <Container>
-      <Title>
+      {/* <Title>
         Welcomepage Phonebook!{' '}
         <span role="img" aria-label="Greeting icon">
           💁‍♀️
         </span>
-      </Title>
+      </Title> */}
     </Container>
   );
 };
