@@ -9,10 +9,6 @@ export const Phonebook = styled.div`
   border-top: 0px;
 `;
 
-export const MainTitle = styled.h1`
-  text-align: center;
-`;
-
 export const SecondTitle = styled.h2`
   /* margin-top: 15px;
   text-align: center; */

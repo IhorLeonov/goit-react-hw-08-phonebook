@@ -1,17 +1,19 @@
 import styled from 'styled-components';
+import homeIcon from 'images/home-icon.png';
 
-export const Container = styled.div`
-  min-height: 'calc(100vh - 50px)';
-  display: 'flex';
-  align-items: 'center';
-  justify-content: 'center';
+export const Wrapper = styled.div`
+  min-height: calc(100vh - 100px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 `;
 
-export const Title = styled.h1`
-  font-weight: 500;
-  font-size: 48;
-  /* text-align: 'center'; */
-  /* display: 'flex';
-  align-items: 'center';
-  justify-content: 'center'; */
+export const HomeButton = styled.div`
+  width: 200px;
+  height: 200px;
+  background-image: url('${homeIcon}');
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
 `;

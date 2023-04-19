@@ -1,15 +1,13 @@
-import { Container } from 'pages/home/HomePage.styled';
+import { Wrapper, HomeButton } from 'pages/home/HomePage.styled';
+import { NavLink } from 'components/navigation/Navigation.styled';
 
 const HomePage = () => {
   return (
-    <Container>
-      {/* <Title>
-        Welcomepage Phonebook!{' '}
-        <span role="img" aria-label="Greeting icon">
-          💁‍♀️
-        </span>
-      </Title> */}
-    </Container>
+    <Wrapper>
+      <NavLink to="/contacts">
+        <HomeButton></HomeButton>
+      </NavLink>
+    </Wrapper>
   );
 };
 

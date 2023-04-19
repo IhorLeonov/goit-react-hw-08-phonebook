@@ -18,7 +18,6 @@ import { ContactList } from 'components/contactList/ContactList';
 import { Filter } from 'components/filter/Filter';
 import {
   ButtonAdd,
-  // MainTitle,
   Phonebook,
   SecondTitle,
   UpperBox,
@@ -26,6 +25,7 @@ import {
   Name,
   Number,
   Total,
+  // MainTitle,
 } from 'pages/contacts/ContactsPage.styled';
 
 import { Notification } from 'components/notification/Notification';
@@ -54,9 +54,6 @@ const ContactsPage = () => {
   return (
     <div>
       <Phonebook>
-        {/* <Helmet> */}
-        {/* <MainTitle>Phonebook</MainTitle> */}
-        {/* </Helmet> */}
         <UpperBox>
           {!isLoading && <SecondTitle>Contacts</SecondTitle>}
           {isLoading && !error && <SecondTitle>Loading...</SecondTitle>}
@@ -72,7 +69,7 @@ const ContactsPage = () => {
           <Filter />
         </Headers>
         <div>
-          {contacts?.length < 1 ? (
+          {contacts?.length < 1 && !isLoading ? (
             <Notification message={'Phonebook is empty!'} />
           ) : (
             <ContactList />
