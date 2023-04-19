@@ -1,9 +1,11 @@
 import styled from 'styled-components';
+import { ButtonSubmit } from 'components/contactForm/ContactForm.styled';
 
 export const DeleteModal = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 
   width: 250px;
   height: 100px;
@@ -17,11 +19,18 @@ export const DeleteModal = styled.div`
 
 export const Text = styled.div`
   font-weight: bold;
-  margin-right: 10px;
+  /* margin-right: 10px; */
 `;
 
-export const ButtonOk = styled.button`
-  margin-right: 10px;
+export const ButtonWrapper = styled.div`
+  margin-top: 15px;
 `;
 
-export const ButtonNo = styled.button``;
+export const ButtonOk = styled(ButtonSubmit)`
+  margin: 0;
+  margin-right: 50px;
+`;
+
+export const ButtonNo = styled(ButtonSubmit)`
+  margin: 0;
+`;

@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
   flex-direction: column;
 `;
 
-export const HomeButton = styled.div`
+export const HomePageImage = styled.div`
   width: 200px;
   height: 200px;
   background-image: url('${homeIcon}');
