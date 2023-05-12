@@ -10,25 +10,24 @@ export const Phonebook = styled.div`
 `;
 
 export const SecondTitle = styled.h2`
-  /* margin-top: 15px;
-  text-align: center; */
   display: inline;
 `;
 
 export const UpperBox = styled.div`
-  padding-bottom: 15px;
+  padding-bottom: 25px;
   display: flex;
   align-items: center;
   border-bottom: ${props => `1px solid ${props.theme.colors.bd}`};
+  
 `;
 
 export const ButtonAdd = styled(ButtonSubmit)`
   margin: 0;
-  margin-left: 10px;
+  margin-left: 15px;
   padding: 0.2em 0.6em;
 
-  background: rgb(128, 244, 126);
-  color: rgb(68, 68, 68);
+  background: #ed8e6b;
+  color: rgb(247, 239, 239);
   font-size: 18px;
 `;
 
@@ -37,8 +36,6 @@ export const Headers = styled.div`
   padding-bottom: 10px;
   padding-top: 10px;
   align-items: center;
-  /* margin-left: 10px; */
-  /* border: 1px solid black; */
   border-bottom: ${props => `1px solid ${props.theme.colors.bd}`};
 `;
 
@@ -48,12 +45,9 @@ export const Total = styled.div`
 
 export const Name = styled.div`
   width: 200px;
-  /* border: 1px solid red; */
   margin-left: 10px;
 `;
 
 export const Number = styled.div`
   width: 200px;
-  /* border: 1px solid blue; */
-  /* margin-left: 10px; */
 `;

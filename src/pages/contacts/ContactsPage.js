@@ -64,8 +64,8 @@ const ContactsPage = () => {
         {isAddFormOpen && <ContactForm />}
         <Headers>
           <Total>Total: {contacts?.length}</Total>
-          <Name>Name:</Name>
-          <Number>Number:</Number>
+          <Name>Name</Name>
+          <Number>Number</Number>
           <Filter />
         </Headers>
         <div>
