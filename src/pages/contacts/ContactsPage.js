@@ -12,6 +12,7 @@ import {
   selectIsAddFormOpen,
 } from 'redux/contacts/selectors';
 
+import { Loader } from 'components/loader/Loader';
 import { GlobalStyle } from 'components/constants/GlobalStyle';
 import { ContactForm } from 'components/contactForm/ContactForm';
 import { ContactList } from 'components/contactList/ContactList';
@@ -25,14 +26,11 @@ import {
   Name,
   Number,
   Total,
-  // MainTitle,
 } from 'pages/contacts/ContactsPage.styled';
 
 import { Notification } from 'components/notification/Notification';
 import { Modal } from 'components/modal/Modal';
 import { DeleteContactWarning } from 'components/deleteContactWarning/DeleteContactWarning';
-
-// import { Helmet } from 'react-helmet-async';
 
 const ContactsPage = () => {
   const dispatch = useDispatch();
@@ -55,8 +53,8 @@ const ContactsPage = () => {
     <div>
       <Phonebook>
         <UpperBox>
-          {!isLoading && <SecondTitle>Contacts</SecondTitle>}
-          {isLoading && !error && <SecondTitle>Loading...</SecondTitle>}
+          <SecondTitle>Contacts</SecondTitle>
+          {isLoading && !error && <Loader width={96} />}
           <ButtonAdd type="button" onClick={handleOpenAddForm}>
             +
           </ButtonAdd>
