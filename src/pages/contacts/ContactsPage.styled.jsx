@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { ButtonSubmit } from 'components/contactForm/ContactForm.styled';
+import { MdExpandMore, MdExpandLess } from 'react-icons/md';
 
 export const Phonebook = styled.div`
   margin-left: auto;
@@ -11,6 +11,7 @@ export const Phonebook = styled.div`
 
 export const SecondTitle = styled.h2`
   display: inline;
+  color: ${props => `${props.theme.colors.hover}`};
 `;
 
 export const UpperBox = styled.div`
@@ -18,17 +19,49 @@ export const UpperBox = styled.div`
   display: flex;
   align-items: center;
   border-bottom: ${props => `1px solid ${props.theme.colors.bd}`};
-  
 `;
 
-export const ButtonAdd = styled(ButtonSubmit)`
-  margin: 0;
-  margin-left: 15px;
-  padding: 0.2em 0.6em;
+export const ButtonAdd = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 8px;
+  cursor: pointer;
+`;
 
-  background: #ed8e6b;
-  color: rgb(247, 239, 239);
-  font-size: 18px;
+export const ShowIcon = styled(MdExpandMore)`
+  width: 34px;
+  height: 34px;
+  fill: ${props => `${props.theme.colors.primary}`};
+  border-radius: 2px;
+  border: 1px solid rgba(0, 0, 0, 0);
+  transition: all 0.218s ease 0s;
+
+  :hover,
+  :focus {
+    fill: ${props => `${props.theme.colors.hover}`};
+    border: 1px solid rgb(198, 198, 198);
+    background: #f7f7f7 linear-gradient(#f7f7f7, #f1f1f1);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+`;
+
+export const HideIcon = styled(MdExpandLess)`
+  width: 34px;
+  height: 34px;
+  fill: ${props => `${props.theme.colors.primary}`};
+  border-radius: 2px;
+  border: 1px solid rgba(0, 0, 0, 0);
+
+  transition: all 0.218s ease 0s;
+
+  :hover,
+  :focus {
+    fill: ${props => `${props.theme.colors.hover}`};
+    border: 1px solid rgb(198, 198, 198);
+    background: #f7f7f7 linear-gradient(#f7f7f7, #f1f1f1);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
 `;
 
 export const Headers = styled.div`

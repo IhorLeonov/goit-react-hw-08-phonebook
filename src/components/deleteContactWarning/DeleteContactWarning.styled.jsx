@@ -19,7 +19,6 @@ export const DeleteModal = styled.div`
 
 export const Text = styled.div`
   font-weight: bold;
-  /* margin-right: 10px; */
 `;
 
 export const ButtonWrapper = styled.div`

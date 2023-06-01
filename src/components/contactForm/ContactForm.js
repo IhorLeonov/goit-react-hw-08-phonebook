@@ -82,7 +82,7 @@ export const ContactForm = () => {
           />
           <ErrorMessage name="number" component="span" />
         </FormLabel>
-        <ButtonSubmit type="submit">Add contact</ButtonSubmit>
+        <ButtonSubmit type="submit">Add</ButtonSubmit>
         <Toaster position="top-left" toastOptions={{ duration: 3000 }} />
       </Form>
     </Formik>

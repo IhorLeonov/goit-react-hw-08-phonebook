@@ -19,6 +19,8 @@ import { ContactList } from 'components/contactList/ContactList';
 import { Filter } from 'components/filter/Filter';
 import {
   ButtonAdd,
+  ShowIcon,
+  HideIcon,
   Phonebook,
   SecondTitle,
   UpperBox,
@@ -56,14 +58,14 @@ const ContactsPage = () => {
           <SecondTitle>Contacts</SecondTitle>
           {isLoading && !error && <Loader width={96} />}
           <ButtonAdd type="button" onClick={handleOpenAddForm}>
-            +
+            {!isAddFormOpen ? <ShowIcon /> : <HideIcon />}
           </ButtonAdd>
         </UpperBox>
         {isAddFormOpen && <ContactForm />}
         <Headers>
           <Total>Total: {contacts?.length}</Total>
-          <Name>Name</Name>
-          <Number>Number</Number>
+          <Name>Name:</Name>
+          <Number>Number:</Number>
           <Filter />
         </Headers>
         <div>

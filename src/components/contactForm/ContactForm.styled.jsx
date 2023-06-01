@@ -39,7 +39,8 @@ export const ButtonSubmit = styled.button`
   font-family: arial, sans-serif;
   font-size: 15px;
   font-weight: bold;
-  color: rgb(68, 68, 68);
+  color: ${props => `${props.theme.colors.btnText}`};
+
   text-transform: capitalize;
   text-decoration: none;
   user-select: none;
@@ -51,7 +52,7 @@ export const ButtonSubmit = styled.button`
   transition: all 0.218s ease 0s;
   :hover,
   :focus {
-    color: rgb(24, 24, 24);
+    color: ${props => `${props.theme.colors.hover}`};
     border: 1px solid rgb(198, 198, 198);
     background: #f7f7f7 linear-gradient(#f7f7f7, #f1f1f1);
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);

@@ -6,9 +6,14 @@ export const NavLink = styled(Link)`
   text-decoration: none;
   padding: 12px;
   font-weight: 700;
-  color: #2a363b;
+  color: ${props => `${props.theme.colors.primary}`};
 
   &.active {
-    color: #ea8d6b;
+    color: ${props => `${props.theme.colors.hover}`};
+  }
+
+  :hover,
+  :focus {
+    color: ${props => `${props.theme.colors.hover}`};
   }
 `;

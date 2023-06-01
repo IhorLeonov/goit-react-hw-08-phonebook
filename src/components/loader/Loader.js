@@ -6,7 +6,7 @@ export const Loader = ({ width }) => {
   return (
     <LoaderBox>
       <RotatingLines
-        strokeColor={theme.colors.bd}
+        strokeColor={theme.colors.hover}
         strokeWidth="5"
         animationDuration="0.75"
         width={width}

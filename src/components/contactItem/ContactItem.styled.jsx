@@ -36,12 +36,9 @@ export const FirstLetterBox = styled.div`
 
 export const Name = styled.div`
   width: 200px;
-  /* border: 1px solid red; */
   margin-left: 25px;
 `;
 
 export const Number = styled.div`
   width: 200px;
-  /* border: 1px solid blue; */
-  /* margin-left: 10px; */
 `;
