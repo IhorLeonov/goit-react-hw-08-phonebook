@@ -7,9 +7,10 @@ export const Phonebook = styled.div`
   padding: 30px;
   border: ${props => `1px solid ${props.theme.colors.bd}`};
   border-top: 0px;
+  /* background-color: ${props => ` ${props.theme.colors.primary}`}; */
 `;
 
-export const SecondTitle = styled.h2`
+export const Title = styled.h2`
   display: inline;
   color: ${props => `${props.theme.colors.hover}`};
 `;

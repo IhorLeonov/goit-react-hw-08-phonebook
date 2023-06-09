@@ -22,7 +22,7 @@ import {
   ShowIcon,
   HideIcon,
   Phonebook,
-  SecondTitle,
+  Title,
   UpperBox,
   Headers,
   Name,
@@ -55,7 +55,7 @@ const ContactsPage = () => {
     <div>
       <Phonebook>
         <UpperBox>
-          <SecondTitle>Contacts</SecondTitle>
+          <Title>Contacts</Title>
           {isLoading && !error && <Loader width={96} />}
           <ButtonAdd type="button" onClick={handleOpenAddForm}>
             {!isAddFormOpen ? <ShowIcon /> : <HideIcon />}
