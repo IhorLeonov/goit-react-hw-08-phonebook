@@ -7,7 +7,6 @@ export const Item = styled.li`
   margin-top: 10px;
   padding: 10px;
   font-size: 20px;
-  /* background-color: ${props => ` ${props.theme.colors.bd}`}; */
   border: ${props => `1px solid ${props.theme.colors.bd}`};
 
   :first-child {
@@ -22,7 +21,6 @@ export const ButtonDelete = styled(ButtonSubmit)`
 `;
 
 export const FirstLetterBox = styled.div`
-  margin-left: 5px;
   width: 40px;
   height: 40px;
   border-radius: 50%;
