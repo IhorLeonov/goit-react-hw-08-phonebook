@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/phonebook/static/css/main.c3d5249d.css",
-    "main.js": "/phonebook/static/js/main.eb56bc73.js",
-    "static/js/475.75ce686c.chunk.js": "/phonebook/static/js/475.75ce686c.chunk.js",
-    "static/js/313.ba58b3ea.chunk.js": "/phonebook/static/js/313.ba58b3ea.chunk.js",
-    "static/js/134.f172782e.chunk.js": "/phonebook/static/js/134.f172782e.chunk.js",
-    "static/js/352.c255f09f.chunk.js": "/phonebook/static/js/352.c255f09f.chunk.js",
-    "static/js/837.a0e644b0.chunk.js": "/phonebook/static/js/837.a0e644b0.chunk.js",
-    "static/media/home-icon.png": "/phonebook/static/media/home-icon.a1c9a66c543dfe6def72.png",
-    "index.html": "/phonebook/index.html",
-    "main.c3d5249d.css.map": "/phonebook/static/css/main.c3d5249d.css.map",
-    "main.eb56bc73.js.map": "/phonebook/static/js/main.eb56bc73.js.map",
-    "475.75ce686c.chunk.js.map": "/phonebook/static/js/475.75ce686c.chunk.js.map",
-    "313.ba58b3ea.chunk.js.map": "/phonebook/static/js/313.ba58b3ea.chunk.js.map",
-    "134.f172782e.chunk.js.map": "/phonebook/static/js/134.f172782e.chunk.js.map",
-    "352.c255f09f.chunk.js.map": "/phonebook/static/js/352.c255f09f.chunk.js.map",
-    "837.a0e644b0.chunk.js.map": "/phonebook/static/js/837.a0e644b0.chunk.js.map"
+    "main.css": "/pet-project-phonebook/static/css/main.c3d5249d.css",
+    "main.js": "/pet-project-phonebook/static/js/main.748d056f.js",
+    "static/js/475.d9a7594f.chunk.js": "/pet-project-phonebook/static/js/475.d9a7594f.chunk.js",
+    "static/js/313.9b2c4b99.chunk.js": "/pet-project-phonebook/static/js/313.9b2c4b99.chunk.js",
+    "static/js/134.59d31484.chunk.js": "/pet-project-phonebook/static/js/134.59d31484.chunk.js",
+    "static/js/352.a91305a1.chunk.js": "/pet-project-phonebook/static/js/352.a91305a1.chunk.js",
+    "static/js/837.3a07b30a.chunk.js": "/pet-project-phonebook/static/js/837.3a07b30a.chunk.js",
+    "static/media/home-icon.png": "/pet-project-phonebook/static/media/home-icon.a1c9a66c543dfe6def72.png",
+    "index.html": "/pet-project-phonebook/index.html",
+    "main.c3d5249d.css.map": "/pet-project-phonebook/static/css/main.c3d5249d.css.map",
+    "main.748d056f.js.map": "/pet-project-phonebook/static/js/main.748d056f.js.map",
+    "475.d9a7594f.chunk.js.map": "/pet-project-phonebook/static/js/475.d9a7594f.chunk.js.map",
+    "313.9b2c4b99.chunk.js.map": "/pet-project-phonebook/static/js/313.9b2c4b99.chunk.js.map",
+    "134.59d31484.chunk.js.map": "/pet-project-phonebook/static/js/134.59d31484.chunk.js.map",
+    "352.a91305a1.chunk.js.map": "/pet-project-phonebook/static/js/352.a91305a1.chunk.js.map",
+    "837.3a07b30a.chunk.js.map": "/pet-project-phonebook/static/js/837.3a07b30a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c3d5249d.css",
-    "static/js/main.eb56bc73.js"
+    "static/js/main.748d056f.js"
   ]
 }
