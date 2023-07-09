@@ -16,7 +16,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <ThemeProvider theme={theme}>
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
-          <BrowserRouter basename="/phonebook">
+          <BrowserRouter basename="/pet-project-phonebook">
             <App />
             <GlobalStyle />
           </BrowserRouter>
